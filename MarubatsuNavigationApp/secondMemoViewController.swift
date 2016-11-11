@@ -25,8 +25,6 @@ class secondMemoViewController: UIViewController {
         // 作成したアラートを表示
         present(alert, animated: true, completion: nil)
     }
-
-    
     
 
     // createボタンが押されたときの処理
@@ -65,10 +63,10 @@ class secondMemoViewController: UIViewController {
             let storyboard: UIStoryboard = self.storyboard!
             
             //遷移先のViewControllerを指定
-            let secondMemoView = storyboard.instantiateViewController(withIdentifier: "secondMemo") as! secondMemoViewController
+            let thirdMemoView = storyboard.instantiateViewController(withIdentifier: "thirdMemoView") as! thirdMemoViewController
             
             //遷移
-            self.present(secondMemoView, animated: true, completion: nil)
+            self.present(thirdMemoView, animated: true, completion: nil)
             
         }else{
             //空白のときはアラートを表示

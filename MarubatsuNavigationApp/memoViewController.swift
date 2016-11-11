@@ -26,7 +26,8 @@ class memoViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    //createボタンが押されたときの処理
+    
+    //createボタンが押されたときの保存処理
     @IBAction func tappedCreateButton(_ sender: Any) {
             var answer: Bool = true
         
@@ -56,11 +57,12 @@ class memoViewController: UIViewController {
             ud.setValue(questions, forKey: "questions")
             
             //次の画面に遷移
+            
             //遷移したいViewControllerがあるstoryboardを指定
             let storyboard: UIStoryboard = self.storyboard!
             
             //遷移先のViewControllerを指定
-            let secondMemoView = storyboard.instantiateViewController(withIdentifier: "secondMemo") as! secondMemoViewController
+            let secondMemoView = storyboard.instantiateViewController(withIdentifier: "secondMemoView") as! secondMemoViewController
             
             //遷移
             self.present(secondMemoView, animated: true, completion: nil)
@@ -72,6 +74,7 @@ class memoViewController: UIViewController {
 
     }
     
+    
     // deleteボタンが押されたときの処理
     @IBAction func tappedDeleteAllQuestionButton(_ sender: UIButton) {
         let ud = UserDefaults.standard
@@ -81,7 +84,7 @@ class memoViewController: UIViewController {
         
         // 空のarrayをset(for エラー回避)
         ud.setValue([], forKey: "questions")
-        
+
         //遷移したいViewControllerがあるstoryboardを指定
         let storyboard: UIStoryboard = self.storyboard!
         

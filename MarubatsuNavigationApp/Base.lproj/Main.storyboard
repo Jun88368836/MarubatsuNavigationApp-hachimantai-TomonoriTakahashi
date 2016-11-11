@@ -137,7 +137,7 @@
         <!--Memo View Controller-->
         <scene sceneID="lbp-cn-4bs">
             <objects>
-                <viewController id="T5X-FT-g1E" customClass="memoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="memoView" id="T5X-FT-g1E" customClass="memoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JDS-JS-GdR"/>
                         <viewControllerLayoutGuide type="bottom" id="YPa-GX-o0d"/>
@@ -157,7 +157,7 @@
                                 <rect key="frame" x="220" y="388.5" width="135" height="30"/>
                                 <state key="normal" title="Create 1st Question"/>
                                 <connections>
-                                    <action selector="tappedCreateButton:" destination="T5X-FT-g1E" eventType="touchUpInside" id="ror-Xo-lla"/>
+                                    <action selector="tappedCreateButton:" destination="T5X-FT-g1E" eventType="touchUpInside" id="bOx-jO-x7x"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-xK-Dn2">
@@ -199,12 +199,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4O-Or-F31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2607.1999999999998" y="26.53673163418291"/>
+            <point key="canvasLocation" x="-2652" y="27"/>
         </scene>
         <!--Second Memo View Controller-->
         <scene sceneID="Oil-PM-Wne">
             <objects>
-                <viewController storyboardIdentifier="secondMemo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R4B-G7-SYY" customClass="secondMemoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondMemoView" id="R4B-G7-SYY" customClass="secondMemoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEA-BE-U1U"/>
                         <viewControllerLayoutGuide type="bottom" id="s9H-cI-JCY"/>
@@ -224,7 +224,7 @@
                                 <rect key="frame" x="213" y="389" width="142" height="30"/>
                                 <state key="normal" title="Create 2nd Question"/>
                                 <connections>
-                                    <action selector="tappedCreateButton:" destination="R4B-G7-SYY" eventType="touchUpInside" id="QTw-HS-pQN"/>
+                                    <action selector="tappedCreateButton:" destination="R4B-G7-SYY" eventType="touchUpInside" id="Icm-mg-w38"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-Az-AAl">
@@ -266,12 +266,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKs-LY-nay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1919" y="27"/>
+            <point key="canvasLocation" x="-1942" y="27"/>
         </scene>
         <!--Third Memo View Controller-->
         <scene sceneID="sMl-qP-y7m">
             <objects>
-                <viewController storyboardIdentifier="thirdMemo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4gx-fC-rsW" customClass="thirdMemoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="thirdMemoView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4gx-fC-rsW" customClass="thirdMemoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U3y-gp-Qag"/>
                         <viewControllerLayoutGuide type="bottom" id="g9u-EU-zIf"/>
@@ -287,9 +287,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NB-KY-oua">
-                                <rect key="frame" x="213" y="389" width="142" height="30"/>
-                                <state key="normal" title="Create 2nd Question"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NB-KY-oua">
+                                <rect key="frame" x="216" y="389" width="139" height="102"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <string key="title">Create 3rd Question
+ and 
+Back to Top</string>
+                                </state>
                                 <connections>
                                     <action selector="tappedCreateButton:" destination="4gx-fC-rsW" eventType="touchUpInside" id="8Oa-4I-V9R"/>
                                 </connections>
@@ -328,12 +333,13 @@
                     <navigationItem key="navigationItem" id="y2L-Xp-XZP"/>
                     <connections>
                         <outlet property="answerControl" destination="3BX-rW-RUa" id="J2S-bI-0iZ"/>
+                        <outlet property="createButton" destination="7NB-KY-oua" id="mBh-E0-kZM"/>
                         <outlet property="questionInputBox" destination="tmz-88-4iI" id="zvr-Bh-VSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yrt-Ba-JKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1182" y="27"/>
+            <point key="canvasLocation" x="-1183.2" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>
