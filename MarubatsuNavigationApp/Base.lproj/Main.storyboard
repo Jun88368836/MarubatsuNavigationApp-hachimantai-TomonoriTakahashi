@@ -1,26 +1,339 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UHn-w2-3WP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="yrW-e6-6ic">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="UHn-w2-3WP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bxL-W0-MxV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mfb-Bf-OE0" kind="relationship" relationship="rootViewController" id="a95-38-rBk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cJ-V6-BE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4314" y="27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GHN-wq-CXQ">
+            <objects>
+                <viewController storyboardIdentifier="View" id="Mfb-Bf-OE0" customClass="ViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Pee-bJ-8KU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ABE-fx-NEq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="d31-L2-0hj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIj-Ep-PZl">
+                                <rect key="frame" x="20" y="483.5" width="163.5" height="163.5"/>
+                                <color key="backgroundColor" red="0.4039215686" green="0.40000000000000002" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bIj-Ep-PZl" secondAttribute="height" multiplier="1:1" id="yuf-Oc-nw8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedNoButton:" destination="Mfb-Bf-OE0" eventType="touchUpInside" id="CPo-WR-PFh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91u-dn-ft5">
+                                <rect key="frame" x="191.5" y="483.5" width="163.5" height="163.5"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <state key="normal" title="○">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedYesButton:" destination="Mfb-Bf-OE0" eventType="touchUpInside" id="Yyl-lR-Mat"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正解数: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61N-33-0fl">
+                                <rect key="frame" x="20" y="61" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題No: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-pe-mA4">
+                                <rect key="frame" x="20" y="30" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題文表示" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVf-9o-UP5">
+                                <rect key="frame" x="20" y="143" width="335" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Zu8-WV-vJG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="解答表示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-rr-1n6">
+                                <rect key="frame" x="20" y="92" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-5D-AS4">
+                                <rect key="frame" x="158" y="25" width="197" height="34"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Create New 3 Questions"/>
+                                <connections>
+                                    <segue destination="T5X-FT-g1E" kind="modal" id="nbu-Jc-Jbk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aIJ-5D-AS4" secondAttribute="trailing" constant="20" id="1I2-ab-6Jh"/>
+                            <constraint firstItem="61N-33-0fl" firstAttribute="top" secondItem="nbu-pe-mA4" secondAttribute="bottom" constant="10" id="1R9-Iy-OZ1"/>
+                            <constraint firstAttribute="trailing" secondItem="aVf-9o-UP5" secondAttribute="trailing" constant="20" id="8Fv-rv-TWX"/>
+                            <constraint firstItem="nbu-pe-mA4" firstAttribute="top" secondItem="Pee-bJ-8KU" secondAttribute="bottom" constant="10" id="C8G-cb-pFB"/>
+                            <constraint firstItem="qGj-rr-1n6" firstAttribute="leading" secondItem="d31-L2-0hj" secondAttribute="leading" constant="20" id="KdE-4S-dNK"/>
+                            <constraint firstAttribute="trailing" secondItem="91u-dn-ft5" secondAttribute="trailing" constant="20" id="Xpk-n7-JcX"/>
+                            <constraint firstItem="nbu-pe-mA4" firstAttribute="leading" secondItem="d31-L2-0hj" secondAttribute="leading" constant="20" id="fMn-i7-hxs"/>
+                            <constraint firstItem="aVf-9o-UP5" firstAttribute="top" secondItem="qGj-rr-1n6" secondAttribute="bottom" constant="30" id="gIo-Au-Ew2"/>
+                            <constraint firstItem="61N-33-0fl" firstAttribute="leading" secondItem="d31-L2-0hj" secondAttribute="leading" constant="20" id="hBf-LX-RNc"/>
+                            <constraint firstItem="91u-dn-ft5" firstAttribute="width" secondItem="bIj-Ep-PZl" secondAttribute="width" id="hny-8N-SjJ"/>
+                            <constraint firstItem="ABE-fx-NEq" firstAttribute="top" secondItem="91u-dn-ft5" secondAttribute="bottom" constant="20" id="l3q-Wf-Idl"/>
+                            <constraint firstItem="ABE-fx-NEq" firstAttribute="top" secondItem="bIj-Ep-PZl" secondAttribute="bottom" constant="20" id="lSz-US-zaL"/>
+                            <constraint firstItem="aIJ-5D-AS4" firstAttribute="top" secondItem="Pee-bJ-8KU" secondAttribute="bottom" constant="5" id="mh1-8V-EIL"/>
+                            <constraint firstItem="bIj-Ep-PZl" firstAttribute="leading" secondItem="d31-L2-0hj" secondAttribute="leading" constant="20" id="mvi-jD-QGh"/>
+                            <constraint firstItem="91u-dn-ft5" firstAttribute="height" secondItem="bIj-Ep-PZl" secondAttribute="height" id="qR5-Cf-8pM"/>
+                            <constraint firstItem="91u-dn-ft5" firstAttribute="leading" secondItem="bIj-Ep-PZl" secondAttribute="trailing" constant="8" id="qmO-3g-nIz"/>
+                            <constraint firstItem="qGj-rr-1n6" firstAttribute="top" secondItem="61N-33-0fl" secondAttribute="bottom" constant="10" id="skr-e1-7uK"/>
+                            <constraint firstItem="aVf-9o-UP5" firstAttribute="leading" secondItem="d31-L2-0hj" secondAttribute="leading" constant="20" id="zFz-C1-SNk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RFv-cb-4Lw"/>
+                    <connections>
+                        <outlet property="answerLabel" destination="qGj-rr-1n6" id="nRv-xf-8SE"/>
+                        <outlet property="questionLabel" destination="aVf-9o-UP5" id="Q3l-0T-1D8"/>
+                        <outlet property="questionNumLabel" destination="nbu-pe-mA4" id="3eK-BN-dIf"/>
+                        <outlet property="yesNum" destination="61N-33-0fl" id="BhZ-oK-PD2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXT-az-2g1" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-3417" y="27"/>
+        </scene>
+        <!--Memo View Controller-->
+        <scene sceneID="lbp-cn-4bs">
+            <objects>
+                <viewController id="T5X-FT-g1E" customClass="memoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JDS-JS-GdR"/>
+                        <viewControllerLayoutGuide type="bottom" id="YPa-GX-o0d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lGu-JQ-MeL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input new question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZk-me-9t1">
+                                <rect key="frame" x="20" y="318.5" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.97486118625360063" green="1" blue="0.66335035923187347" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0C0-Ne-wM0">
+                                <rect key="frame" x="220" y="388.5" width="135" height="30"/>
+                                <state key="normal" title="Create 1st Question"/>
+                                <connections>
+                                    <action selector="tappedCreateButton:" destination="T5X-FT-g1E" eventType="touchUpInside" id="ror-Xo-lla"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-xK-Dn2">
+                                <rect key="frame" x="20" y="388.5" width="93" height="29"/>
+                                <segments>
+                                    <segment title="False"/>
+                                    <segment title="True"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdG-gi-AGI">
+                                <rect key="frame" x="118" y="617" width="139" height="30"/>
+                                <state key="normal" title="Delete All Questions">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedDeleteAllQuestionButton:" destination="T5X-FT-g1E" eventType="touchUpInside" id="SI2-Y0-dVq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lhr-xK-Dn2" firstAttribute="leading" secondItem="lGu-JQ-MeL" secondAttribute="leading" constant="20" id="2zt-eJ-eJg"/>
+                            <constraint firstItem="0C0-Ne-wM0" firstAttribute="top" secondItem="RZk-me-9t1" secondAttribute="bottom" constant="40" id="3Lq-aA-EyM"/>
+                            <constraint firstAttribute="trailing" secondItem="RZk-me-9t1" secondAttribute="trailing" constant="20" id="405-Q2-Xw0"/>
+                            <constraint firstItem="RZk-me-9t1" firstAttribute="leading" secondItem="lGu-JQ-MeL" secondAttribute="leading" constant="20" id="F9F-Nw-L9F"/>
+                            <constraint firstItem="pdG-gi-AGI" firstAttribute="centerX" secondItem="lGu-JQ-MeL" secondAttribute="centerX" id="N51-oU-Q2g"/>
+                            <constraint firstItem="RZk-me-9t1" firstAttribute="centerY" secondItem="lGu-JQ-MeL" secondAttribute="centerY" id="PEp-iU-KP5"/>
+                            <constraint firstItem="YPa-GX-o0d" firstAttribute="top" secondItem="pdG-gi-AGI" secondAttribute="bottom" constant="20" id="kbK-3h-Gp8"/>
+                            <constraint firstItem="Lhr-xK-Dn2" firstAttribute="top" secondItem="RZk-me-9t1" secondAttribute="bottom" constant="40" id="rsZ-Hy-hGu"/>
+                            <constraint firstAttribute="trailing" secondItem="0C0-Ne-wM0" secondAttribute="trailing" constant="20" id="slU-lM-Rd0"/>
+                            <constraint firstItem="RZk-me-9t1" firstAttribute="centerX" secondItem="lGu-JQ-MeL" secondAttribute="centerX" id="t2l-Cb-G7C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EsB-NV-RAu"/>
+                    <connections>
+                        <outlet property="answerControl" destination="Lhr-xK-Dn2" id="SLV-E9-M0h"/>
+                        <outlet property="questionInputBox" destination="RZk-me-9t1" id="eQW-wa-WCm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4O-Or-F31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2607.1999999999998" y="26.53673163418291"/>
+        </scene>
+        <!--Second Memo View Controller-->
+        <scene sceneID="Oil-PM-Wne">
+            <objects>
+                <viewController storyboardIdentifier="secondMemo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R4B-G7-SYY" customClass="secondMemoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEA-BE-U1U"/>
+                        <viewControllerLayoutGuide type="bottom" id="s9H-cI-JCY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VPc-BK-0Sq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input new question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="leD-BA-i10">
+                                <rect key="frame" x="20" y="319" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.97486118629999996" green="1" blue="0.66335035919999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5D-Yt-Lpt">
+                                <rect key="frame" x="213" y="389" width="142" height="30"/>
+                                <state key="normal" title="Create 2nd Question"/>
+                                <connections>
+                                    <action selector="tappedCreateButton:" destination="R4B-G7-SYY" eventType="touchUpInside" id="QTw-HS-pQN"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-Az-AAl">
+                                <rect key="frame" x="20" y="389" width="93" height="29"/>
+                                <segments>
+                                    <segment title="False"/>
+                                    <segment title="True"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edN-co-bUn">
+                                <rect key="frame" x="118" y="617" width="139" height="30"/>
+                                <state key="normal" title="Delete All Questions">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedDeleteAllQuestionButton:" destination="R4B-G7-SYY" eventType="touchUpInside" id="HPo-WY-xWo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="leD-BA-i10" firstAttribute="leading" secondItem="VPc-BK-0Sq" secondAttribute="leading" constant="20" id="64z-Tg-Poj"/>
+                            <constraint firstItem="r1v-Az-AAl" firstAttribute="top" secondItem="leD-BA-i10" secondAttribute="bottom" constant="40" id="O6S-RP-L9t"/>
+                            <constraint firstAttribute="trailing" secondItem="d5D-Yt-Lpt" secondAttribute="trailing" constant="20" id="XQV-17-lEe"/>
+                            <constraint firstItem="d5D-Yt-Lpt" firstAttribute="top" secondItem="leD-BA-i10" secondAttribute="bottom" constant="40" id="ao6-oS-Ktu"/>
+                            <constraint firstAttribute="trailing" secondItem="leD-BA-i10" secondAttribute="trailing" constant="20" id="ifO-rk-ygA"/>
+                            <constraint firstItem="edN-co-bUn" firstAttribute="centerX" secondItem="VPc-BK-0Sq" secondAttribute="centerX" id="nxu-Jb-710"/>
+                            <constraint firstItem="leD-BA-i10" firstAttribute="centerX" secondItem="VPc-BK-0Sq" secondAttribute="centerX" id="qXL-WB-OdZ"/>
+                            <constraint firstItem="r1v-Az-AAl" firstAttribute="leading" secondItem="VPc-BK-0Sq" secondAttribute="leading" constant="20" id="rTn-bn-9vc"/>
+                            <constraint firstItem="s9H-cI-JCY" firstAttribute="top" secondItem="edN-co-bUn" secondAttribute="bottom" constant="20" id="yvH-Ud-rcL"/>
+                            <constraint firstItem="leD-BA-i10" firstAttribute="centerY" secondItem="VPc-BK-0Sq" secondAttribute="centerY" id="yyA-ck-rfb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ugw-WX-lsY"/>
+                    <connections>
+                        <outlet property="answerControl" destination="r1v-Az-AAl" id="quD-V0-a8W"/>
+                        <outlet property="questionInputBox" destination="leD-BA-i10" id="Zo2-Dq-oIj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKs-LY-nay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1919" y="27"/>
+        </scene>
+        <!--Third Memo View Controller-->
+        <scene sceneID="sMl-qP-y7m">
+            <objects>
+                <viewController storyboardIdentifier="thirdMemo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4gx-fC-rsW" customClass="thirdMemoViewController" customModule="MarubatsuNavigationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U3y-gp-Qag"/>
+                        <viewControllerLayoutGuide type="bottom" id="g9u-EU-zIf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r4j-e0-2Xp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input new question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmz-88-4iI">
+                                <rect key="frame" x="20" y="319" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.97486118629999996" green="1" blue="0.66335035919999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NB-KY-oua">
+                                <rect key="frame" x="213" y="389" width="142" height="30"/>
+                                <state key="normal" title="Create 2nd Question"/>
+                                <connections>
+                                    <action selector="tappedCreateButton:" destination="4gx-fC-rsW" eventType="touchUpInside" id="8Oa-4I-V9R"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-rW-RUa">
+                                <rect key="frame" x="20" y="389" width="93" height="29"/>
+                                <segments>
+                                    <segment title="False"/>
+                                    <segment title="True"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk5-bJ-Dhv">
+                                <rect key="frame" x="118" y="617" width="139" height="30"/>
+                                <state key="normal" title="Delete All Questions">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedDeleteAllQuestionButton:" destination="4gx-fC-rsW" eventType="touchUpInside" id="lCO-e7-zBK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3BX-rW-RUa" firstAttribute="top" secondItem="tmz-88-4iI" secondAttribute="bottom" constant="40" id="0W5-G0-0cp"/>
+                            <constraint firstItem="tmz-88-4iI" firstAttribute="centerX" secondItem="r4j-e0-2Xp" secondAttribute="centerX" id="5KU-FW-D3t"/>
+                            <constraint firstItem="3BX-rW-RUa" firstAttribute="leading" secondItem="r4j-e0-2Xp" secondAttribute="leading" constant="20" id="8Bi-CI-0Np"/>
+                            <constraint firstItem="7NB-KY-oua" firstAttribute="top" secondItem="tmz-88-4iI" secondAttribute="bottom" constant="40" id="Dq8-SJ-Ct3"/>
+                            <constraint firstItem="Zk5-bJ-Dhv" firstAttribute="centerX" secondItem="r4j-e0-2Xp" secondAttribute="centerX" id="KxX-6v-CVa"/>
+                            <constraint firstAttribute="trailing" secondItem="tmz-88-4iI" secondAttribute="trailing" constant="20" id="ek6-UO-S3J"/>
+                            <constraint firstItem="tmz-88-4iI" firstAttribute="centerY" secondItem="r4j-e0-2Xp" secondAttribute="centerY" id="jte-ou-FtN"/>
+                            <constraint firstItem="g9u-EU-zIf" firstAttribute="top" secondItem="Zk5-bJ-Dhv" secondAttribute="bottom" constant="20" id="uXZ-2N-EcI"/>
+                            <constraint firstAttribute="trailing" secondItem="7NB-KY-oua" secondAttribute="trailing" constant="20" id="xhO-ws-WkN"/>
+                            <constraint firstItem="tmz-88-4iI" firstAttribute="leading" secondItem="r4j-e0-2Xp" secondAttribute="leading" constant="20" id="z4u-UE-uP7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y2L-Xp-XZP"/>
+                    <connections>
+                        <outlet property="answerControl" destination="3BX-rW-RUa" id="J2S-bI-0iZ"/>
+                        <outlet property="questionInputBox" destination="tmz-88-4iI" id="zvr-Bh-VSN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yrt-Ba-JKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1182" y="27"/>
         </scene>
     </scenes>
 </document>
